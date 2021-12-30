@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages';
 import About from './pages/about';
 import Services from './pages/services';
@@ -12,13 +12,13 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/services' component={Services} />
-        <Route path='/contact-us' component={Contact} />
-        <Route path='/sign-up' component={SignUp} />
-      </Switch>
+      <Routes>
+        <Route path='/' exact element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/services' element={<Services/>} />
+        <Route path='/contact-us' element={<Contact/>} />
+        <Route path='/sign-up' element={<SignUp/>} />
+      </Routes>
     </Router>
   );
 }
